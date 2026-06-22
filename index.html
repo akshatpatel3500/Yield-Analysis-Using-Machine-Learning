@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Recommendation</title>
+</head>
+<body>
+    <h2>Crop Recommendation Model</h2>
+    <form action="{{ url_for('predict') }}" method="POST">
+        <label>Nitrogen:</label>
+        <input type="text" name="N" required="required" placeholder="Enter Nitrogen content"><br><br>
+        <label>Phosphorus:</label>
+        <input type="text" name="P" required="required" placeholder="Enter Phosphorus content"><br><br>
+        <label>Potassium:</label>
+        <input type="text" name="K" required="required" placeholder="Enter Potassium content"><br><br>
+        <label>Temperature:</label>
+        <input type="text" name="temperature" required="required" placeholder="Enter Temperature"><br><br>
+        <label>Humidity:</label>
+        <input type="text" name="humidity" required="required" placeholder="Enter Humidity"><br><br>
+        <label>Soil pH:</label>
+        <input type="text" name="ph" required="required" placeholder="Enter Soil pH"><br><br>
+        <label>Rainfall:</label>
+        <input type="text" name="rainfall" required="required" placeholder="Enter Rainfall"><br><br>
+        <button type="submit">Predict Crop</button>
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
