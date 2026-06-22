@@ -1,0 +1,9 @@
+flask
+numpy
+pandas
+joblib
+# The model .pkl files were saved with scikit-learn < 1.3.
+# Pin to the version used during training so they load correctly.
+scikit-learn==1.2.2
+matplotlib
+seaborn
